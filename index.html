@@ -2,156 +2,537 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ФАСАДИКО — Фасадные панели и вентилируемые фасады</title>
-<meta name="description" content="ФАСАДИКО — фасадные панели под кирпич и камень, навесные вентилируемые фасады. Колпино, Санкт-Петербург.">
-<style>
-:root{--blue:#183b59;--dark:#17232e;--orange:#e58b35;--light:#f4f5f6}
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;color:#303942;background:white}
-a{text-decoration:none;color:inherit}
-.top{background:#172b3d;color:#fff;font-size:13px;padding:10px 5%}
-.topinner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-.header{max-width:1200px;margin:auto;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-size:30px;font-weight:900;color:var(--blue);letter-spacing:1px}
-.logo span{color:var(--orange)}
-.phone{font-size:21px;font-weight:bold;color:var(--blue)}
-.callback{display:inline-block;background:var(--orange);color:#fff;padding:13px 20px;border-radius:3px;font-weight:bold}
-.navwrap{background:var(--blue);color:#fff}
-.nav{max-width:1200px;margin:auto;display:flex;align-items:center;flex-wrap:wrap;padding:0 15px}
-.nav a{padding:17px 15px;font-size:14px;font-weight:bold}
-.nav a:hover{background:#285675}
-.subnav{background:#eef1f3;border-bottom:1px solid #ddd}
-.subnavinner{max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;padding:0 15px}
-.subnav a{padding:15px 18px;color:var(--blue);font-weight:bold;font-size:14px}
-.hero{min-height:430px;background:linear-gradient(90deg,rgba(12,28,42,.86),rgba(12,28,42,.18)),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85') center/cover;display:flex;align-items:center;color:white}
-.heroinner{max-width:1200px;width:100%;margin:auto;padding:65px 25px}
-.hero h1{font-size:42px;max-width:650px;line-height:1.15;margin:0 0 20px}
-.hero p{font-size:19px;max-width:580px;line-height:1.6}
-.section{max-width:1200px;margin:auto;padding:65px 22px}
-.section h2{text-align:center;color:var(--blue);font-size:30px;margin:0 0 15px}
-.lead{text-align:center;color:#68737c;margin:0 auto 35px;max-width:700px;line-height:1.6}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{border:1px solid #e1e4e6;background:#fff;box-shadow:0 5px 18px #17232e12}
-.card img{width:100%;height:220px;object-fit:cover;display:block}
-.cardbody{padding:22px}
-.card h3{color:var(--blue);font-size:20px;margin:0 0 12px}
-.card p{line-height:1.5;color:#68737c}
-.more{color:#d47b28;font-weight:bold}
-.about{background:var(--light)}
-.aboutinner{max-width:1200px;margin:auto;padding:60px 22px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.aboutinner img{width:100%;height:330px;object-fit:cover}
-.about h2{color:var(--blue);font-size:30px}
-.about p{line-height:1.7;color:#59636b}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-.feature{background:#fff;padding:22px;text-align:center;border:1px solid #e5e8ea}
-.feature strong{display:block;color:var(--blue);margin-bottom:8px}
-.contact{background:#183b59;color:white}
-.contactinner{max-width:1200px;margin:auto;padding:55px 22px}
-.contact h2{text-align:center;font-size:30px}
-.contactgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:35px}
-.contactgrid div{background:#ffffff12;padding:22px;line-height:1.7}
-footer{background:#122536;color:#dce3e8;padding:25px;text-align:center;font-size:14px}
-@media(max-width:750px){
-.header{flex-wrap:wrap}.phone{font-size:18px}
-.nav a{padding:13px 10px}.subnav a{padding:12px 10px}
-.hero{min-height:380px}.hero h1{font-size:32px}
-.cards,.aboutinner,.contactgrid{grid-template-columns:1fr}
-.features{grid-template-columns:1fr}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ФАСАДИКО — фасадные панели под кирпич и камень</title>
+  <meta name="description" content="Фасадные панели под кирпич и камень. ФАСАДИКО, Санкт-Петербург, Колпино.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:90px; }
+    body { font-family:Montserrat,Arial,sans-serif; color:#1a1a1a; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    button,input,textarea { font:inherit; }
+    img { max-width:100%; display:block; }
+    .container { max-width:1240px; margin:auto; padding:0 20px; }
+
+    header {
+      position:sticky; top:0; z-index:1000;
+      background:#14161a; color:white;
+      box-shadow:0 2px 16px rgba(0,0,0,.15);
+    }
+    .header-top {
+      min-height:82px; display:flex; align-items:center;
+      justify-content:space-between; gap:20px;
+    }
+    .logo { font-size:26px; font-weight:800; letter-spacing:1.5px; }
+    .logo span { color:#e8b400; }
+    .logo small { display:block; font-size:10px; color:#aaa; letter-spacing:3px; }
+    .main-nav ul { display:flex; gap:22px; list-style:none; }
+    .main-nav a { font-size:13px; font-weight:600; }
+    .main-nav a:hover { color:#e8b400; }
+    .header-right { display:flex; align-items:center; gap:16px; }
+    .header-phone { color:#e8b400; font-weight:700; white-space:nowrap; }
+    .btn-callback {
+      padding:9px 16px; border:1px solid #e8b400;
+      border-radius:6px; background:transparent; color:#e8b400;
+      cursor:pointer;
+    }
+    .btn-callback:hover { background:#e8b400; color:#14161a; }
+    .burger {
+      display:none; background:none; border:0; cursor:pointer;
+      padding:8px;
+    }
+    .burger span {
+      display:block; width:26px; height:3px;
+      background:white; margin:5px 0; border-radius:2px;
+    }
+
+    .hero { position:relative; height:600px; overflow:hidden; background:#292929; }
+    .slide {
+      position:absolute; inset:0; display:flex; align-items:center;
+      opacity:0; visibility:hidden; transition:opacity .7s;
+    }
+    .slide.active { opacity:1; visibility:visible; }
+    .slide-bg { position:absolute; inset:0; background-size:cover; background-position:center; }
+    .slide-bg:after {
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(90deg,rgba(15,17,20,.9),rgba(15,17,20,.35));
+    }
+    .slide-1 .slide-bg { background-image:linear-gradient(135deg,#353535,#80634d); }
+    .slide-2 .slide-bg { background-image:linear-gradient(135deg,#37312a,#9a7955); }
+    .slide-3 .slide-bg { background-image:linear-gradient(135deg,#273038,#64737d); }
+    .slide-content { position:relative; z-index:2; color:white; max-width:680px; }
+    .tag {
+      display:inline-block; background:#e8b400; color:#14161a;
+      padding:6px 13px; font-size:12px; font-weight:700;
+      letter-spacing:1px; margin-bottom:20px; border-radius:4px;
+    }
+    .slide h1 { font-size:46px; line-height:1.15; margin-bottom:20px; }
+    .slide p { font-size:17px; margin-bottom:28px; }
+    .hero-buttons { display:flex; gap:14px; flex-wrap:wrap; }
+    .btn {
+      display:inline-block; border:0; border-radius:7px;
+      padding:14px 26px; font-weight:700; cursor:pointer;
+      text-align:center;
+    }
+    .btn-primary { background:#e8b400; color:#14161a; }
+    .btn-primary:hover { background:#f5c518; }
+    .btn-outline { border:2px solid white; color:white; }
+    .btn-outline:hover { border-color:#e8b400; color:#e8b400; }
+    .slider-arrow {
+      position:absolute; top:50%; transform:translateY(-50%);
+      z-index:5; width:46px; height:46px; border-radius:50%;
+      background:rgba(255,255,255,.15); border:1px solid white;
+      color:white; font-size:25px; cursor:pointer;
+    }
+    .slider-arrow.prev { left:20px; }
+    .slider-arrow.next { right:20px; }
+    .slider-dots {
+      position:absolute; bottom:24px; left:50%;
+      transform:translateX(-50%); display:flex; gap:9px; z-index:5;
+    }
+    .slider-dots button {
+      width:30px; height:5px; border:0; border-radius:5px;
+      background:#aaa; cursor:pointer;
+    }
+    .slider-dots button.active { background:#e8b400; }
+
+    section { padding:75px 0; }
+    .section-head { text-align:center; margin-bottom:42px; }
+    .eyebrow { color:#c99b00; font-size:13px; font-weight:700; letter-spacing:2px; }
+    .section-head h2 { font-size:34px; margin-top:8px; }
+    .section-head p { color:#666; max-width:650px; margin:12px auto 0; }
+
+    .advantages,.about,.gallery { background:#f6f6f6; }
+    .adv-grid,.products,.gallery-grid,.delivery-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px;
+    }
+    .adv-card {
+      background:white; padding:27px; border-radius:12px;
+      box-shadow:0 4px 18px rgba(0,0,0,.05);
+    }
+    .adv-card .ic { font-size:30px; margin-bottom:12px; }
+    .adv-card h3 { font-size:17px; margin-bottom:8px; }
+    .adv-card p { color:#666; font-size:14px; }
+
+    .catalog-tabs { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:35px; }
+    .catalog-tab {
+      border:1px solid #ddd; border-radius:30px; padding:11px 23px;
+      background:white; cursor:pointer; font-weight:600;
+    }
+    .catalog-tab.active,.catalog-tab:hover { background:#14161a; color:white; }
+    .catalog-panel { display:none; }
+    .catalog-panel.active { display:block; }
+    .product {
+      border:1px solid #eee; border-radius:12px; overflow:hidden;
+      display:flex; flex-direction:column;
+    }
+    .product-img {
+      height:200px; display:flex; align-items:center;
+      justify-content:center; font-size:65px; color:white;
+    }
+    .pimg-1 { background:linear-gradient(135deg,#b5533a,#753321); }
+    .pimg-2 { background:linear-gradient(135deg,#666,#333); }
+    .pimg-3 { background:linear-gradient(135deg,#d1a17a,#99704c); }
+    .pimg-4 { background:linear-gradient(135deg,#8b8175,#51483f); }
+    .pimg-5 { background:linear-gradient(135deg,#7d8890,#424d55); }
+    .pimg-6 { background:linear-gradient(135deg,#aaa,#666); }
+    .pimg-7 { background:linear-gradient(135deg,#c9b28a,#90764e); }
+    .pimg-8 { background:linear-gradient(135deg,#8a7d6f,#554b40); }
+    .product-body { padding:20px; display:flex; flex-direction:column; flex:1; }
+    .product-body h3 { font-size:17px; margin-bottom:8px; }
+    .product-specs { font-size:12px; color:#777; margin-bottom:15px; }
+    .product-price { font-size:21px; color:#b58b00; font-weight:800; margin-top:auto; margin-bottom:14px; }
+    .product-price small { color:#777; font-size:13px; font-weight:500; }
+    .product-body .btn { width:100%; }
+
+    .about-wrap { display:grid; grid-template-columns:1.1fr .9fr; gap:45px; align-items:center; }
+    .about-text h2 { font-size:32px; line-height:1.25; margin:12px 0 18px; }
+    .about-text p { color:#555; margin-bottom:14px; }
+    .about-photo {
+      min-height:350px; border-radius:15px;
+      background:linear-gradient(135deg,#343434,#96724f);
+      display:flex; align-items:flex-end; padding:25px; color:white;
+    }
+    .about-photo strong { font-size:22px; display:block; }
+
+    .step-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px; }
+    .step { padding:25px; border:1px solid #eee; border-radius:12px; }
+    .step .num {
+      background:#e8b400; display:inline-flex; width:34px; height:34px;
+      align-items:center; justify-content:center; border-radius:50%;
+      font-weight:800; margin-bottom:12px;
+    }
+    .step p { font-size:14px; color:#666; margin-top:8px; }
+
+    .gallery-item {
+      min-height:230px; border-radius:12px; padding:20px;
+      display:flex; align-items:flex-end; color:white;
+      background:linear-gradient(135deg,#76513c,#292929);
+    }
+    .gallery-item:nth-child(2) { background:linear-gradient(135deg,#777,#292929); }
+    .gallery-item:nth-child(3) { background:linear-gradient(135deg,#bd956d,#514033); }
+    .gallery-item:nth-child(4) { background:linear-gradient(135deg,#60717b,#29343b); }
+
+    .delivery-card { background:#f6f6f6; padding:25px; border-radius:12px; }
+    .delivery-card h3 { margin-bottom:12px; }
+    .delivery-card li { list-style:none; margin:8px 0; font-size:14px; color:#555; }
+
+    .contacts { background:#14161a; color:white; }
+    .contacts .section-head h2 { color:white; }
+    .contacts .section-head p { color:#bbb; }
+    .contacts-wrap { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+    .contact-info h3 { color:#e8b400; margin-bottom:20px; }
+    .contact-item { display:flex; gap:14px; margin-bottom:20px; }
+    .ci-icon { font-size:22px; }
+    .ci-text strong { display:block; color:#aaa; font-size:12px; }
+    .ci-text a,.ci-text span { color:white; }
+    .order-form { background:#202329; padding:28px; border-radius:14px; }
+    .order-form h3 { font-size:22px; margin-bottom:8px; }
+    .order-form p { color:#bbb; font-size:13px; margin-bottom:18px; }
+    .order-form input,.order-form textarea {
+      width:100%; padding:13px; margin-bottom:13px;
+      border:1px solid #444; border-radius:7px;
+      background:#14161a; color:white;
+    }
+    .order-form textarea { min-height:85px; resize:vertical; }
+    .form-status { margin-top:12px; font-size:13px; }
+
+    footer { background:#0e1013; color:#aaa; padding:35px 0; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr; gap:25px; }
+    .footer-top h4 { color:white; margin-bottom:12px; }
+    .footer-top li { list-style:none; margin-bottom:7px; font-size:13px; }
+    .footer-bottom { text-align:center; border-top:1px solid #292929; margin-top:25px; padding-top:20px; font-size:12px; }
+
+    @media(max-width:1000px) {
+      .main-nav { display:none; position:absolute; top:100%; left:0; right:0; background:#14161a; padding:20px; }
+      .main-nav.open { display:block; }
+      .main-nav ul { flex-direction:column; gap:15px; }
+      .burger { display:block; }
+      .header-right .btn-callback { display:none; }
+      .about-wrap,.contacts-wrap { grid-template-columns:1fr; }
+      .slide h1 { font-size:36px; }
+      .slider-arrow { display:none; }
+    }
+    @media(max-width:600px) {
+      .header-top { min-height:70px; }
+      .logo { font-size:21px; }
+      .header-phone { font-size:12px; }
+      .hero { height:490px; }
+      .slide h1 { font-size:27px; }
+      .slide p { font-size:14px; }
+      .hero-buttons { flex-direction:column; }
+      .hero-buttons .btn { width:100%; }
+      section { padding:50px 0; }
+      .section-head h2 { font-size:25px; }
+      .footer-top { grid-template-columns:1fr; }
+    }
+  </style>
 </head>
+
 <body>
-<div class="top">
- <div class="topinner">
-  <span>Фасадные панели и навесные фасады</span>
-  <span>Санкт-Петербург, г. Колпино, ул. Шумская, 33</span>
- </div>
-</div>
-<header class="header">
- <a class="logo" href="#">ФАСАДИ<span>КО</span></a>
- <div>
-  <div class="phone">+7 966 754-58-68</div>
-  <small>Илья Сичиев — руководитель</small>
- </div>
- <a class="callback" href="tel:+79667545868">ПОЗВОНИТЬ</a>
+<header>
+  <div class="container header-top">
+    <a href="#" class="logo">ФАСАД<span>ИКО</span><small>ФАСАДНЫЕ СИСТЕМЫ</small></a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#catalog">Каталог</a></li>
+        <li><a href="#about">О компании</a></li>
+        <li><a href="#montage">Монтаж</a></li>
+        <li><a href="#gallery">Галерея</a></li>
+        <li><a href="#delivery">Доставка</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <a href="tel:+79667545868" class="header-phone">+7 966 754-58-68</a>
+      <button class="btn-callback" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">Заказать звонок</button>
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
 </header>
-<div class="navwrap">
- <nav class="nav">
-  <a href="#about">О КОМПАНИИ</a>
-  <a href="#catalog">КАТАЛОГ</a>
-  <a href="#advantages">ПРЕИМУЩЕСТВА</a>
-  <a href="#contacts">КОНТАКТЫ</a>
- </nav>
-</div>
-<div class="subnav">
- <div class="subnavinner">
-  <a href="#brick">ПАНЕЛИ ПОД КИРПИЧ</a>
-  <a href="#stone">ПАНЕЛИ ПОД КАМЕНЬ</a>
-  <a href="#vent">НАВЕСНЫЕ ФАСАДЫ</a>
-  <a href="#accessories">КОМПЛЕКТУЮЩИЕ</a>
- </div>
-</div>
-<section class="hero">
- <div class="heroinner">
-  <h1>НАДЁЖНЫЕ ФАСАДНЫЕ РЕШЕНИЯ ДЛЯ ВАШЕГО ДОМА</h1>
-  <p>Фасадные панели под кирпич и камень, навесные вентилируемые фасады и комплектующие.</p>
-  <a class="callback" href="#catalog">СМОТРЕТЬ КАТАЛОГ</a>
- </div>
-</section>
-<section class="section" id="catalog">
- <h2>НАША ПРОДУКЦИЯ</h2>
- <p class="lead">Решения для отделки и защиты фасадов зданий</p>
- <div class="cards">
-  <article class="card" id="brick">
-   <img src="https://images.unsplash.com/photo-1590725140246-20acdee442be?auto=format&fit=crop&w=900&q=80" alt="Фасад под кирпич">
-   <div class="cardbody"><h3>Фасадные панели под кирпич</h3><p>Фактура кирпичной кладки для современного и классического фасада.</p><a class="more" href="#contacts">УЗНАТЬ ПОДРОБНЕЕ →</a></div>
-  </article>
-  <article class="card" id="stone">
-   <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80" alt="Фасад под камень">
-   <div class="cardbody"><h3>Фасадные панели под камень</h3><p>Выразительная каменная фактура для наружной отделки зданий.</p><a class="more" href="#contacts">УЗНАТЬ ПОДРОБНЕЕ →</a></div>
-  </article>
-  <article class="card" id="vent">
-   <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80" alt="Навесной фасад">
-   <div class="cardbody"><h3>Навесные вентилируемые фасады</h3><p>Современные фасадные системы для жилых и коммерческих зданий.</p><a class="more" href="#contacts">УЗНАТЬ ПОДРОБНЕЕ →</a></div>
-  </article>
- </div>
- <div id="accessories" style="text-align:center;padding-top:30px">
-  <h3 style="color:#183b59">Угловые элементы и комплектующие</h3>
-  <p>Все необходимые элементы для монтажа фасадной системы</p>
- </div>
-</section>
-<section class="about" id="about">
- <div class="aboutinner">
-  <div>
-   <h2>О КОМПАНИИ ФАСАДИКО</h2>
-   <p>ФАСАДИКО предлагает фасадные панели под кирпич и камень, навесные вентилируемые фасады, угловые элементы и комплектующие.</p>
-   <p>Поможем подобрать решение для фасада вашего дома или коммерческого объекта.</p>
-   <a class="callback" href="tel:+79667545868">СВЯЗАТЬСЯ С НАМИ</a>
+
+<main>
+  <section class="hero" style="padding:0">
+    <div class="slide slide-1 active">
+      <div class="slide-bg"></div>
+      <div class="container"><div class="slide-content">
+        <span class="tag">Фасадные решения</span>
+        <h1>Фасадные панели под кирпич и камень</h1>
+        <p>Фасадные панели для современного и привлекательного внешнего вида вашего дома.</p>
+        <div class="hero-buttons">
+          <a href="#catalog" class="btn btn-primary">Смотреть каталог</a>
+          <a href="#contacts" class="btn btn-outline">Связаться с нами</a>
+        </div>
+      </div></div>
+    </div>
+    <div class="slide slide-2">
+      <div class="slide-bg"></div>
+      <div class="container"><div class="slide-content">
+        <span class="tag">Коллекции фасадных панелей</span>
+        <h1>Выберите фактуру для своего дома</h1>
+        <p>Панели под кирпич, камень и другие архитектурные решения.</p>
+        <div class="hero-buttons">
+          <a href="#catalog" class="btn btn-primary">Выбрать коллекцию</a>
+          <a href="#contacts" class="btn btn-outline">Получить консультацию</a>
+        </div>
+      </div></div>
+    </div>
+    <div class="slide slide-3">
+      <div class="slide-bg"></div>
+      <div class="container"><div class="slide-content">
+        <span class="tag">ФАСАДИКО</span>
+        <h1>Фасад, который подчёркивает стиль здания</h1>
+        <p>Подберём подходящие панели и комплектующие для вашего объекта.</p>
+        <div class="hero-buttons">
+          <a href="#delivery" class="btn btn-primary">Условия доставки</a>
+          <a href="#contacts" class="btn btn-outline">Оставить заявку</a>
+        </div>
+      </div></div>
+    </div>
+    <button class="slider-arrow prev" id="slidePrev" aria-label="Предыдущий слайд">‹</button>
+    <button class="slider-arrow next" id="slideNext" aria-label="Следующий слайд">›</button>
+    <div class="slider-dots" id="sliderDots"></div>
+  </section>
+
+  <section class="advantages">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Почему выбирают нас</span>
+        <h2>Преимущества ФАСАДИКО</h2>
+        <p>Помогаем подобрать фасадное решение для вашего объекта.</p>
+      </div>
+      <div class="adv-grid">
+        <div class="adv-card"><div class="ic">🏠</div><h3>Современный внешний вид</h3><p>Разнообразие фактур и вариантов оформления фасада.</p></div>
+        <div class="adv-card"><div class="ic">🧱</div><h3>Разные фактуры</h3><p>Коллекции под кирпич и натуральный камень.</p></div>
+        <div class="adv-card"><div class="ic">📐</div><h3>Комплектующие</h3><p>Угловые элементы и дополнительные детали.</p></div>
+        <div class="adv-card"><div class="ic">📞</div><h3>Консультация</h3><p>Поможем подобрать подходящий вариант для вашего проекта.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog" id="catalog">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Каталог</span>
+        <h2>Наша продукция</h2>
+        <p>Выберите интересующую категорию продукции.</p>
+      </div>
+      <div class="catalog-tabs">
+        <button class="catalog-tab active" data-tab="brick">Панели под кирпич</button>
+        <button class="catalog-tab" data-tab="stone">Панели под камень</button>
+        <button class="catalog-tab" data-tab="facade">Вентилируемые фасады</button>
+      </div>
+
+      <div class="catalog-panel active" data-panel="brick">
+        <div class="products">
+          <article class="product"><div class="product-img pimg-1">🧱</div><div class="product-body"><h3>Панели под кирпич</h3><p class="product-specs">Коллекции и варианты фактур уточняйте у менеджера.</p><a href="#contacts" class="btn btn-primary">Узнать цену</a></div></article>
+          <article class="product"><div class="product-img pimg-2">🧱</div><div class="product-body"><h3>Кирпичные фактуры</h3><p class="product-specs">Подбор цвета и фактуры под ваш объект.</p><a href="#contacts" class="btn btn-primary">Узнать цену</a></div></article>
+          <article class="product"><div class="product-img pimg-3">🧱</div><div class="product-body"><h3>Декоративные панели</h3><p class="product-specs">Подробности и наличие уточняйте у менеджера.</p><a href="#contacts" class="btn btn-primary">Узнать цену</a></div></article>
+        </div>
+      </div>
+
+      <div class="catalog-panel" data-panel="stone">
+        <div class="products">
+          <article class="product"><div class="product-img pimg-5">🪨</div><div class="product-body"><h3>Панели под камень</h3><p class="product-specs">Фактура натурального камня.</p><a href="#contacts" class="btn btn-primary">Узнать цену</a></div></article>
+          <article class="product"><div class="product-img pimg-6">🪨</div><div class="product-body"><h3>Сланец</h3><p class="product-specs">Цвета и размеры уточняйте у менеджера.</p><a href="#contacts" class="btn btn-primary">Узнать цену</a></div></article>
+          <article class="product"><div class="product-img pimg-7">🪨</div><div class="product-body"><h3>Декоративный камень</h3><p class="product-specs">Подбор коллекции для вашего фасада.</p><a href="#contacts" class="btn btn-primary">Узнать цену</a></div></article>
+        </div>
+      </div>
+
+      <div class="catalog-panel" data-panel="facade">
+        <div class="products">
+          <article class="product"><div class="product-img pimg-4">🏢</div><div class="product-body"><h3>Навесные вентилируемые фасады</h3><p class="product-specs">Комплексные фасадные решения.</p><a href="#contacts" class="btn btn-primary">Узнать цену</a></div></article>
+          <article class="product"><div class="product-img pimg-8">📐</div><div class="product-body"><h3>Угловые элементы</h3><p class="product-specs">Комплектующие для оформления фасада.</p><a href="#contacts" class="btn btn-primary">Узнать цену</a></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-wrap">
+      <div class="about-text">
+        <span class="eyebrow">О компании</span>
+        <h2>ФАСАДИКО — фасадные решения для вашего дома</h2>
+        <p>Предлагаем фасадные панели под кирпич и камень, навесные вентилируемые фасады, угловые элементы и комплектующие.</p>
+        <p>Свяжитесь с нами, чтобы получить консультацию и подобрать продукцию для вашего объекта.</p>
+      </div>
+      <div class="about-photo">
+        <div><span>Руководитель</span><strong>Илья Сичиев</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="montage">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Монтаж</span>
+        <h2>Этапы работы</h2>
+        <p>Основные этапы подбора и заказа фасадных материалов.</p>
+      </div>
+      <div class="step-grid">
+        <div class="step"><span class="num">1</span><h3>Заявка</h3><p>Оставьте заявку или позвоните нам.</p></div>
+        <div class="step"><span class="num">2</span><h3>Консультация</h3><p>Обсудим ваш объект и необходимые материалы.</p></div>
+        <div class="step"><span class="num">3</span><h3>Подбор</h3><p>Подберём подходящую коллекцию и комплектующие.</p></div>
+        <div class="step"><span class="num">4</span><h3>Заказ</h3><p>Согласуем стоимость, наличие и условия доставки.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Галерея</span>
+        <h2>Примеры фасадных решений</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><h3>Фасад под кирпич</h3></div>
+        <div class="gallery-item"><h3>Фасад под камень</h3></div>
+        <div class="gallery-item"><h3>Современные фасады</h3></div>
+        <div class="gallery-item"><h3>Комплектующие</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="delivery">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Доставка и оплата</span>
+        <h2>Условия заказа</h2>
+        <p>Подробности доставки и оплаты согласовываются с менеджером.</p>
+      </div>
+      <div class="delivery-grid">
+        <div class="delivery-card"><h3>Самовывоз</h3><ul><li>Колпино, ул. Шумская, 33</li><li>Время получения уточняйте у менеджера</li></ul></div>
+        <div class="delivery-card"><h3>Доставка</h3><ul><li>Условия и стоимость по согласованию</li><li>Возможность доставки уточняйте при заказе</li></ul></div>
+        <div class="delivery-card"><h3>Оплата</h3><ul><li>Способы оплаты согласовываются при оформлении заказа</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Контакты</span>
+        <h2>Свяжитесь с нами</h2>
+        <p>Позвоните или оставьте заявку для консультации.</p>
+      </div>
+      <div class="contacts-wrap">
+        <div class="contact-info">
+          <h3>Наши контакты</h3>
+          <div class="contact-item"><div class="ci-icon">📍</div><div class="ci-text"><strong>Адрес</strong><span>Санкт-Петербург, г. Колпино, ул. Шумская, д. 33</span></div></div>
+          <div class="contact-item"><div class="ci-icon">👤</div><div class="ci-text"><strong>Руководитель</strong><span>Илья Сичиев</span></div></div>
+          <div class="contact-item"><div class="ci-icon">📞</div><div class="ci-text"><strong>Телефон</strong><a href="tel:+79667545868">+7 966 754-58-68</a></div></div>
+        </div>
+        <form class="order-form" id="orderForm">
+          <h3>Оставить заявку</h3>
+          <p>Заполните поля. После отправки откроется WhatsApp для передачи заявки.</p>
+          <input id="fName" type="text" placeholder="Ваше имя" required>
+          <input id="fPhone" type="tel" placeholder="Ваш телефон" required>
+          <input id="fAddress" type="text" placeholder="Адрес объекта">
+          <textarea id="fComment" placeholder="Комментарий"></textarea>
+          <button type="submit" class="btn btn-primary" style="width:100%">Отправить заявку</button>
+          <div class="form-status" id="formStatus" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div><div class="logo">ФАСАД<span>ИКО</span></div><p>Фасадные панели под кирпич и камень. Санкт-Петербург, Колпино.</p></div>
+      <div><h4>Компания</h4><ul><li><a href="#about">О компании</a></li><li><a href="#montage">Этапы работы</a></li><li><a href="#gallery">Галерея</a></li></ul></div>
+      <div><h4>Контакты</h4><ul><li><a href="tel:+79667545868">+7 966 754-58-68</a></li><li><a href="#contacts">Оставить заявку</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 ФАСАДИКО. Информация на сайте уточняется у менеджера.</div>
   </div>
-  <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="Современный фасад дома">
- </div>
-</section>
-<section class="section" id="advantages">
- <h2>ПОЧЕМУ ВЫБИРАЮТ НАС</h2>
- <p class="lead">Помогаем подобрать фасадные материалы и комплектующие для вашего объекта</p>
- <div class="features">
-  <div class="feature"><strong>Подбор материалов</strong>Решения под архитектуру и задачи объекта</div>
-  <div class="feature"><strong>Комплексный подход</strong>Панели, угловые элементы и комплектующие</div>
-  <div class="feature"><strong>Консультация</strong>Свяжитесь с нами для уточнения деталей и стоимости</div>
- </div>
-</section>
-<section class="contact" id="contacts">
- <div class="contactinner">
-  <h2>КОНТАКТЫ ФАСАДИКО</h2>
-  <div class="contactgrid">
-   <div><strong>ТЕЛЕФОН</strong><br><a href="tel:+79667545868">+7 966 754-58-68</a></div>
-   <div><strong>АДРЕС</strong><br>Санкт-Петербург, город Колпино,<br>улица Шумская, 33</div>
-   <div><strong>РУКОВОДИТЕЛЬ</strong><br>Илья Сичиев</div>
-  </div>
- </div>
-</section>
-<footer>© ФАСАДИКО. Фасадные панели и вентилируемые фасады.</footer>
+</footer>
+
+<script>
+  // Мобильное меню
+  const burger = document.getElementById('burger');
+  const mainNav = document.getElementById('mainNav');
+
+  burger.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+  });
+
+  document.querySelectorAll('#mainNav a').forEach(link => {
+    link.addEventListener('click', () => mainNav.classList.remove('open'));
+  });
+
+  // Слайдер
+  const slides = [...document.querySelectorAll('.slide')];
+  const dotsWrap = document.getElementById('sliderDots');
+  let currentSlide = 0;
+  let sliderTimer;
+
+  slides.forEach((slide, index) => {
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', 'Слайд ' + (index + 1));
+    dot.addEventListener('click', () => showSlide(index));
+    dotsWrap.appendChild(dot);
+  });
+
+  const dots = [...dotsWrap.querySelectorAll('button')];
+
+  function showSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    clearInterval(sliderTimer);
+    sliderTimer = setInterval(() => showSlide(currentSlide + 1), 6000);
+  }
+
+  document.getElementById('slideNext').addEventListener('click', () => showSlide(currentSlide + 1));
+  document.getElementById('slidePrev').addEventListener('click', () => showSlide(currentSlide - 1));
+  showSlide(0);
+
+  // Переключение каталога
+  document.querySelectorAll('.catalog-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.catalog-tab').forEach(item => item.classList.remove('active'));
+      document.querySelectorAll('.catalog-panel').forEach(panel => panel.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector('[data-panel="' + tab.dataset.tab + '"]').classList.add('active');
+    });
+  });
+
+  // Заявка через WhatsApp — без хранения секретного токена в браузере
+  document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('fName').value.trim();
+    const phone = document.getElementById('fPhone').value.trim();
+    const address = document.getElementById('fAddress').value.trim();
+    const comment = document.getElementById('fComment').value.trim();
+    const status = document.getElementById('formStatus');
+
+    if (!name || !phone) {
+      status.textContent = 'Заполните имя и телефон.';
+      return;
+    }
+
+    const message =
+      'Заявка на сайте ФАСАДИКО\n' +
+      'Имя: ' + name + '\n' +
+      'Телефон: ' + phone + '\n' +
+      'Адрес: ' + (address || 'Не указан') + '\n' +
+      'Комментарий: ' + (comment || 'Нет');
+
+    const whatsappUrl = 'https://wa.me/79667545868?text=' + encodeURIComponent(message);
+    window.open(whatsappUrl, '_blank', 'noopener');
+    status.textContent = 'Откройте WhatsApp и отправьте подготовленное сообщение.';
+  });
+</script>
 </body>
 </html>
