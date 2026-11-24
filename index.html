@@ -1,83 +1,157 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ФАСАДИКО — Фасадные панели</title>
+<title>ФАСАДИКО — Фасадные панели и вентилируемые фасады</title>
+<meta name="description" content="ФАСАДИКО — фасадные панели под кирпич и камень, навесные вентилируемые фасады. Колпино, Санкт-Петербург.">
 <style>
+:root{--blue:#183b59;--dark:#17232e;--orange:#e58b35;--light:#f4f5f6}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;color:#222}
-header{padding:20px 6%;display:flex;justify-content:space-between;align-items:center;background:#fff}
-.logo{font-size:28px;font-weight:bold;color:#a94f2c}
-a{color:inherit;text-decoration:none}
-nav a{margin-left:20px}
-.hero{padding:110px 7%;color:white;background:linear-gradient(90deg,#20252add,#20252a44),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85') center/cover}
-.hero h1{font-size:48px;max-width:650px}
-.hero p{font-size:20px;max-width:600px}
-.btn{display:inline-block;background:#a94f2c;color:white;padding:14px 22px;margin-top:15px}
-section{padding:65px 7%}
-h2{font-size:34px}
+body{margin:0;font-family:Arial,sans-serif;color:#303942;background:white}
+a{text-decoration:none;color:inherit}
+.top{background:#172b3d;color:#fff;font-size:13px;padding:10px 5%}
+.topinner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.header{max-width:1200px;margin:auto;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:30px;font-weight:900;color:var(--blue);letter-spacing:1px}
+.logo span{color:var(--orange)}
+.phone{font-size:21px;font-weight:bold;color:var(--blue)}
+.callback{display:inline-block;background:var(--orange);color:#fff;padding:13px 20px;border-radius:3px;font-weight:bold}
+.navwrap{background:var(--blue);color:#fff}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;flex-wrap:wrap;padding:0 15px}
+.nav a{padding:17px 15px;font-size:14px;font-weight:bold}
+.nav a:hover{background:#285675}
+.subnav{background:#eef1f3;border-bottom:1px solid #ddd}
+.subnavinner{max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;padding:0 15px}
+.subnav a{padding:15px 18px;color:var(--blue);font-weight:bold;font-size:14px}
+.hero{min-height:430px;background:linear-gradient(90deg,rgba(12,28,42,.86),rgba(12,28,42,.18)),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85') center/cover;display:flex;align-items:center;color:white}
+.heroinner{max-width:1200px;width:100%;margin:auto;padding:65px 25px}
+.hero h1{font-size:42px;max-width:650px;line-height:1.15;margin:0 0 20px}
+.hero p{font-size:19px;max-width:580px;line-height:1.6}
+.section{max-width:1200px;margin:auto;padding:65px 22px}
+.section h2{text-align:center;color:var(--blue);font-size:30px;margin:0 0 15px}
+.lead{text-align:center;color:#68737c;margin:0 auto 35px;max-width:700px;line-height:1.6}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{border:1px solid #ddd;padding:20px}
-.card img{width:100%;height:220px;object-fit:cover}
-footer{background:#222;color:white;padding:40px 7%}
-@media(max-width:700px){.cards{grid-template-columns:1fr}header{display:block}nav{margin-top:15px}nav a{margin:0 12px 0 0}.hero h1{font-size:36px}}
+.card{border:1px solid #e1e4e6;background:#fff;box-shadow:0 5px 18px #17232e12}
+.card img{width:100%;height:220px;object-fit:cover;display:block}
+.cardbody{padding:22px}
+.card h3{color:var(--blue);font-size:20px;margin:0 0 12px}
+.card p{line-height:1.5;color:#68737c}
+.more{color:#d47b28;font-weight:bold}
+.about{background:var(--light)}
+.aboutinner{max-width:1200px;margin:auto;padding:60px 22px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.aboutinner img{width:100%;height:330px;object-fit:cover}
+.about h2{color:var(--blue);font-size:30px}
+.about p{line-height:1.7;color:#59636b}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.feature{background:#fff;padding:22px;text-align:center;border:1px solid #e5e8ea}
+.feature strong{display:block;color:var(--blue);margin-bottom:8px}
+.contact{background:#183b59;color:white}
+.contactinner{max-width:1200px;margin:auto;padding:55px 22px}
+.contact h2{text-align:center;font-size:30px}
+.contactgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:35px}
+.contactgrid div{background:#ffffff12;padding:22px;line-height:1.7}
+footer{background:#122536;color:#dce3e8;padding:25px;text-align:center;font-size:14px}
+@media(max-width:750px){
+.header{flex-wrap:wrap}.phone{font-size:18px}
+.nav a{padding:13px 10px}.subnav a{padding:12px 10px}
+.hero{min-height:380px}.hero h1{font-size:32px}
+.cards,.aboutinner,.contactgrid{grid-template-columns:1fr}
+.features{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<header>
-<div class="logo">ФАСАДИКО</div>
-<nav>
-<a href="#about">О компании</a>
-<a href="#catalog">Каталог</a>
-<a href="#contacts">Контакты</a>
-</nav>
+<div class="top">
+ <div class="topinner">
+  <span>Фасадные панели и навесные фасады</span>
+  <span>Санкт-Петербург, г. Колпино, ул. Шумская, 33</span>
+ </div>
+</div>
+<header class="header">
+ <a class="logo" href="#">ФАСАДИ<span>КО</span></a>
+ <div>
+  <div class="phone">+7 966 754-58-68</div>
+  <small>Илья Сичиев — руководитель</small>
+ </div>
+ <a class="callback" href="tel:+79667545868">ПОЗВОНИТЬ</a>
 </header>
-
-<div class="hero">
-<h1>Фасад, которым хочется гордиться</h1>
-<p>Фасадные панели под кирпич и камень. Навесные вентилируемые фасады и комплектующие.</p>
-<a class="btn" href="#catalog">Смотреть каталог</a>
+<div class="navwrap">
+ <nav class="nav">
+  <a href="#about">О КОМПАНИИ</a>
+  <a href="#catalog">КАТАЛОГ</a>
+  <a href="#advantages">ПРЕИМУЩЕСТВА</a>
+  <a href="#contacts">КОНТАКТЫ</a>
+ </nav>
 </div>
-
-<section id="about">
-<h2>ФАСАДИКО — фасадные решения</h2>
-<p>Помогаем подобрать фасадные панели и комплектующие для вашего объекта.</p>
+<div class="subnav">
+ <div class="subnavinner">
+  <a href="#brick">ПАНЕЛИ ПОД КИРПИЧ</a>
+  <a href="#stone">ПАНЕЛИ ПОД КАМЕНЬ</a>
+  <a href="#vent">НАВЕСНЫЕ ФАСАДЫ</a>
+  <a href="#accessories">КОМПЛЕКТУЮЩИЕ</a>
+ </div>
+</div>
+<section class="hero">
+ <div class="heroinner">
+  <h1>НАДЁЖНЫЕ ФАСАДНЫЕ РЕШЕНИЯ ДЛЯ ВАШЕГО ДОМА</h1>
+  <p>Фасадные панели под кирпич и камень, навесные вентилируемые фасады и комплектующие.</p>
+  <a class="callback" href="#catalog">СМОТРЕТЬ КАТАЛОГ</a>
+ </div>
 </section>
-
-<section id="catalog">
-<h2>Каталог продукции</h2>
-<div class="cards">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80">
-<h3>Фасадные панели под кирпич</h3>
-<p>Разнообразие фактур и оттенков.</p>
-</div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80">
-<h3>Фасадные панели под камень</h3>
-<p>Эстетика натурального камня.</p>
-</div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80">
-<h3>Навесные фасады</h3>
-<p>Современные фасадные системы.</p>
-</div>
-</div>
+<section class="section" id="catalog">
+ <h2>НАША ПРОДУКЦИЯ</h2>
+ <p class="lead">Решения для отделки и защиты фасадов зданий</p>
+ <div class="cards">
+  <article class="card" id="brick">
+   <img src="https://images.unsplash.com/photo-1590725140246-20acdee442be?auto=format&fit=crop&w=900&q=80" alt="Фасад под кирпич">
+   <div class="cardbody"><h3>Фасадные панели под кирпич</h3><p>Фактура кирпичной кладки для современного и классического фасада.</p><a class="more" href="#contacts">УЗНАТЬ ПОДРОБНЕЕ →</a></div>
+  </article>
+  <article class="card" id="stone">
+   <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80" alt="Фасад под камень">
+   <div class="cardbody"><h3>Фасадные панели под камень</h3><p>Выразительная каменная фактура для наружной отделки зданий.</p><a class="more" href="#contacts">УЗНАТЬ ПОДРОБНЕЕ →</a></div>
+  </article>
+  <article class="card" id="vent">
+   <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80" alt="Навесной фасад">
+   <div class="cardbody"><h3>Навесные вентилируемые фасады</h3><p>Современные фасадные системы для жилых и коммерческих зданий.</p><a class="more" href="#contacts">УЗНАТЬ ПОДРОБНЕЕ →</a></div>
+  </article>
+ </div>
+ <div id="accessories" style="text-align:center;padding-top:30px">
+  <h3 style="color:#183b59">Угловые элементы и комплектующие</h3>
+  <p>Все необходимые элементы для монтажа фасадной системы</p>
+ </div>
 </section>
-
-<section id="contacts">
-<h2>Контакты</h2>
-<p><b>Руководитель:</b> Илья Сичиев</p>
-<p><b>Адрес:</b> Санкт-Петербург, г. Колпино, ул. Шумская, 33</p>
-<p><b>Телефон:</b> <a href="tel:+79667545868">+7 966 754-58-68</a></p>
-<a class="btn" href="tel:+79667545868">Позвонить</a>
+<section class="about" id="about">
+ <div class="aboutinner">
+  <div>
+   <h2>О КОМПАНИИ ФАСАДИКО</h2>
+   <p>ФАСАДИКО предлагает фасадные панели под кирпич и камень, навесные вентилируемые фасады, угловые элементы и комплектующие.</p>
+   <p>Поможем подобрать решение для фасада вашего дома или коммерческого объекта.</p>
+   <a class="callback" href="tel:+79667545868">СВЯЗАТЬСЯ С НАМИ</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="Современный фасад дома">
+ </div>
 </section>
-
-<footer>
-<h2>ФАСАДИКО</h2>
-<p>Фасадные панели и системы</p>
-<p>+7 966 754-58-68</p>
-</footer>
+<section class="section" id="advantages">
+ <h2>ПОЧЕМУ ВЫБИРАЮТ НАС</h2>
+ <p class="lead">Помогаем подобрать фасадные материалы и комплектующие для вашего объекта</p>
+ <div class="features">
+  <div class="feature"><strong>Подбор материалов</strong>Решения под архитектуру и задачи объекта</div>
+  <div class="feature"><strong>Комплексный подход</strong>Панели, угловые элементы и комплектующие</div>
+  <div class="feature"><strong>Консультация</strong>Свяжитесь с нами для уточнения деталей и стоимости</div>
+ </div>
+</section>
+<section class="contact" id="contacts">
+ <div class="contactinner">
+  <h2>КОНТАКТЫ ФАСАДИКО</h2>
+  <div class="contactgrid">
+   <div><strong>ТЕЛЕФОН</strong><br><a href="tel:+79667545868">+7 966 754-58-68</a></div>
+   <div><strong>АДРЕС</strong><br>Санкт-Петербург, город Колпино,<br>улица Шумская, 33</div>
+   <div><strong>РУКОВОДИТЕЛЬ</strong><br>Илья Сичиев</div>
+  </div>
+ </div>
+</section>
+<footer>© ФАСАДИКО. Фасадные панели и вентилируемые фасады.</footer>
 </body>
 </html>
